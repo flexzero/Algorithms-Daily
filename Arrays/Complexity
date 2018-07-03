@@ -1,0 +1,16 @@
+The time it takes to add the element to the array at beginning is: O(n)
+because, take example of the following array:
+|12|15|18|| |
+if you have to add the element to the index 1( or 0 of course )
+you have to move each element in the array to current_index + 1 location
+and there is no other way to achive it using loops or iteration, ( for now may be in far future AI or Quntum can solve it )
+so it takes O(n) to achieve that
+same for the removing the element at the beginning
+
+if you want to add or remove the element at the end 
+it will take only constant time O(n) because for that case you don't need to
+move elements,
+
+and for adding or removing the elements at the end of the array it will take again
+in worst case O(n) complexity because in worst case you have to move all the elements
+in the array.

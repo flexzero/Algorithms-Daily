@@ -1,0 +1,23 @@
+The ND(Multi-Dimentional Array) contains the array ponits to another arrays(depending on the size):
+(Assume that index starts with 1 not zero)
+for example we have an array A:
+    |1| -> | 55 | 88 | 44 |
+    001     001  004  008
+A:  |2| -> | 22 | 56 | 33 |
+    004     012  016  020
+    |3| -> | 33 | 29 | 44 |
+    008     024  028  032
+
+each index of the array A points to another array and thus simulating the 
+multi-dimentional space.
+
+now if we want to access the element at the index (3, 3)
+first you have to skip other elements and need to get the starting point of the row 3
+you can do it using ( 3 - 1 ) X 3 which will skip the 6 elements in our given array.
+now you have to add the index of the column - 1 to the result of the former expression
+which is (3 - 1 ) x 3 + ( 3 - 1 )
+now multiply it with the address of the array( assume that it's start with 000 ) + size of the
+element( here 4 byte - integer )
+which is: array_addr +  element_size x ( 3 - 1 ) x 3 + ( 3 - 1 ) = 000 + 4 x ( 3 - 1 ) x 3 + ( 3 - 1 ) = 032
+which is exact address required element (3, 3)
+
