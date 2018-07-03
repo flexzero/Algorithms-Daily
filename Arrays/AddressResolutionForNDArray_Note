@@ -21,3 +21,5 @@ element( here 4 byte - integer )
 which is: array_addr +  element_size x ( 3 - 1 ) x 3 + ( 3 - 1 ) = 000 + 4 x ( 3 - 1 ) x 3 + ( 3 - 1 ) = 032
 which is exact address required element (3, 3)
 
+1000 + 8 x ( 6 - 0 )
+1008 x ( 6 )
