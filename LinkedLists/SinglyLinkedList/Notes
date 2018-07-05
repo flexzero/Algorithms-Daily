@@ -1,0 +1,93 @@
+A singly linkedList is a linear data structure which contains a collection of nodes pointing to another
+node. every node contains the corresponding data and the address(pointer or reference) of next node. The first node is called head and the last tail.
+
+|HEAD| -> |  22  | -> |  44  | -> |  48  | -> |  55  | <- |TAIL|
+          |  nxt |    |  nxt |    |  nxt |    |  nx  | -> null    
+The following operations we can do on the linked list
+
+PushFront(Key)              add element to front
+Key TopFront()              returns front item
+PopFront()                  remove front item
+PushBack(Key)               add to back
+Key TopBack()               return back item
+PopBack()                   remove back item
+Boolean Find(Key)           is key in list?
+Erase(Key)                  remove the key from list
+Boolean Empty()             Empty list?
+AddBefore(Node, Key)        Adds the key before Node
+AddAfter(Node, Key)         Adds the key after Node
+
+These are the pseudo codes for the corresponding functions.
+
+PushFront(key)
+
+node <- new node
+node.key <- key
+node.next <- head
+head <- node
+if tail == nil:
+    tail <- head
+
+----------------------------------
+
+PopFront()
+
+if head == nil
+    ERROR: empty list
+head <- head.next
+if head == nil:
+    tail <- nil
+
+-----------------------------------
+
+PushBack(key) 
+
+node <- new node
+node.key <- key
+node <- next = nil
+if tail <- nil:
+    head <- tail <- node
+
+------------------------------------
+
+PopBack()
+
+if head == nil: ERROR: empty list
+if head == tail:
+    head <- tail <- nil
+
+else:
+    p <- head
+    while p.next.next != nil:
+        p <- p.next
+    p.next <- nil; tail <- p
+
+-------------------------------------
+
+AddAfter(node, key)
+
+node2 <- new node
+node2.key <- key
+node2.next = node.next
+node.next = node2;
+if tail == node:
+    tail <- node2
+
+
+---------------------------------------
+
+Complexity Table
+
+Singly-Linked List      |       no tail         |       with tail       |
+----------------------------------------------------------------------------------------       
+PushFront(Key)          |       O(1)            |                       |       
+TopFront()              |       O(1)            |                       |
+PopFront()              |       O(1)            |                       |
+PushBack(Key)           |       O(n)            |       O(1)            |
+TopBack()               |       O(n)            |       O(1)            |
+PopBack()               |       O(n)            |                       |
+Find(Key)               |       O(n)            |                       |
+Erase(Key)              |       O(n)            |                       |
+Empty()                 |       O(n)            |                       |
+AddBefore(Node, Key)    |       O(n)            |                       |
+AddAfter(Node, Key)     |       O(n)            |                       |
